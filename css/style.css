@@ -1,0 +1,85 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: #20cbff;
+    border-radius: 20px;
+    box-shadow: 5px 15px 30px 0px rgba(0, 0, 0, 60%);
+    overflow: hidden;
+}
+
+.pendulo-rec{
+    width: 200px;
+    height: 40px;
+    padding-top: 100px;
+}
+
+.pendulo-rec::before{
+    content: '';
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 5px;
+    background: #fff;
+    border-radius: 3px;
+    left: 0;
+    bottom: 100px;
+}
+
+.pendulo-rec .ball{
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 100%;
+    transform-origin: 50% -100px;
+}
+
+.pendulo-rec .ball::before{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 1px;
+    top: -100px;
+    left: 19px;
+    background: #fff;
+}
+
+.pendulo-rec .mov-l{
+    animation: mov-l 0.8s ease-out infinite alternate;
+}
+
+.pendulo-rec .mov-r{
+    animation: mov-r 0.8s ease-out 0.8s infinite alternate;
+}
+
+@keyframes mov-l{
+    0%,
+    50%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(30deg)
+    }
+}
+
+@keyframes mov-r{
+    0%,
+    50%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-30deg)
+    }
+}
